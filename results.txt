@@ -1,0 +1,277 @@
+Top 10 Most Used Words (from partial dataset 1000000):
+the: 8224968
+and: 4508385
+of: 4242699
+to: 3809815
+a: 3768741
+i: 2788725
+is: 2680689
+in: 2412748
+it: 2268952
+this: 2021987
+Execution time (partial dataset): 56.55595254898071 seconds
+
+PS C:\Users\akuca\Desktop\bdProject> bash ./wordCount.sh
+8226603 the
+4508430 and
+4242734 of
+3809851 to
+2680773 is
+2412795 in
+2268987 it
+2022065 this
+1898919 book
+1833726 that
+
+Execution time: 85.669610653 seconds 1000000 entries ...incorrect results??
+
+
+
+
+Top 10 Most Used Words (3 million normal no parrallelisation):
+the: 24706530
+and: 13514335
+of: 12791743
+to: 11434783
+a: 11322147
+i: 8284586
+is: 8040832
+in: 7259280
+it: 6783647
+this: 6051901
+
+146.23 seconds
+
+
+pyspark MapReduce Results:
+Execution time: 144.65 seconds all from text file
+Top 10 words:
+the: 24706530
+and: 13514335
+of: 12791743
+to: 11434783
+a: 11322147
+i: 8284586
+is: 8040832
+in: 7259280
+it: 6783647
+this: 6051901
+
+
+Top 10 words: scala for all from txt
+the: 24706530
+and: 13514335
+of: 12791743
+to: 11434783
+a: 11322147
+i: 8284586
+is: 8040832
+in: 7259280
+it: 6783647
+this: 6051901
+Execution time: 27.61 seconds
+
+
+Top 10 words in reviews: all csv scala with spark core api
+the: 24706530
+and: 13514335
+of: 12791743
+to: 11434783
+a: 11322147
+i: 8284586
+is: 8040832
+in: 7259280
+it: 6783647
+this: 6051901
+Execution time: 31.00 seconds
+
+Top 10 Most Used Words (from partial dataset with  3000000  entries): with python normally
+the: 24706530
+and: 13514335
+of: 12791743
+to: 11434783
+a: 11322147
+i: 8284586
+is: 8040832
+in: 7259280
+it: 6783647
+this: 6051901
+Execution time (partial dataset): 213.27316427230835 seconds
+
+
+Top 10 Most Used Words (from dataset with 3000000 entries):
+the: 24706530
+and: 13514335
+of: 12791743
+to: 11434783
+a: 11322147
+i: 8284586
+is: 8040832
+in: 7259280
+it: 6783647
+this: 6051901
+Execution time: 1292.649 seconds
+
+scala full no parallelisation
+
+
+
+no parallelisation
+Found 103469 unique authors in books data
+Found 206399 unique authors in authors data
+Number of authors found in both CSV files: 25810
+
+
+
+#####scala with spark
+
+Negative word occurrences in reviews:
+bad: 172010
+boring: 91347
+poor: 75106
+hate: 50015
+worst: 42215
+waste: 36920
+worse: 35781
+negative: 34194
+terrible: 32334
+horrible: 27676
+failed: 24097
+disappointment: 20525
+disappointing: 20250
+failure: 17423
+awful: 16738
+useless: 12932
+dislike: 11455
+mediocre: 7110
+dreadful: 4212
+lousy: 2568
+
+Total negative word occurrences: 734908
+
+Positive word occurrences in reviews:
+good: 896478
+great: 857852
+love: 655785
+best: 441681
+better: 341771
+wonderful: 215254
+excellent: 204436
+loved: 199893
+favorite: 154981
+beautiful: 129021
+amazing: 112994
+perfect: 108909
+enjoyable: 74695
+brilliant: 58373
+fantastic: 51958
+positive: 36550
+delightful: 25999
+outstanding: 25318
+superb: 23403
+impressive: 15442
+
+Total positive word occurrences: 4630793
+
+Sentiment comparison:
+Positive words are more common (6.30 times more frequent than negative words)
+Execution time: 33.40 seconds
+
+
+####
+
+scala with spark
+
+Title                                                        | Positive Words  | Negative Words  | Ratio (Pos/Neg)
+--------------------------------------------------------------------------------------------------------------
+Pride and Prejudice                                          | 43301           | 4222            | 10.26
+The Hobbit                                                   | 34756           | 2699            | 12.88
+Wuthering Heights                                            | 27610           | 5436            | 5.08
+Atlas Shrugged                                               | 19882           | 5719            | 3.48
+Great Expectations                                           | 18428           | 3124            | 5.90
+The Giver                                                    | 14812           | 2222            | 6.67
+The Great Gatsby                                             | 13892           | 1872            | 7.42
+Persuasion                                                   | 13708           | 1047            | 13.09
+Of Mice and Men                                              | 11646           | 1955            | 5.96
+Harry Potter and The Sorcerer's Stone                        | 12181           | 1387            | 8.78
+
+Execution time: 25.95 seconds
+
+####
+
+author sentiment 
+
+Total unique authors: 152847
+Authors with sentiment data: 152847
+Authors classified as good (score > 0.0): 126370
+Authors classified as bad (score < 0.0): 4010
+Authors classified as neutral (score = 0.0 or no reviews): 22467
+
+######
+
+Author Sentiment Classification Results (Sequential):
+------------------------------------------
+Total unique authors: 152682
+Authors with sentiment data: 133585
+Authors classified as good (score > 0.0): 126224
+Authors classified as bad (score < 0.0): 4005
+Authors classified as neutral (score = 0.0 or no reviews): 22453
+Execution time: 80.62 seconds
+Books processed: 212000 (limit: 212000)
+Reviews processed: 3000000 (limit: 3000000)
+#####
+
+spark Author Sentiment Classification Results:
+------------------------------------------
+Total unique authors: 152847
+Authors with sentiment data: 152847
+Authors classified as good (score > 0.0): 126370
+Authors classified as bad (score < 0.0): 4010
+Authors classified as neutral (score = 0.0 or no reviews): 22467
+
+Execution time: 25.57 seconds
+
+####
+seq
+
+Input Statistics:
+- Total Good Authors: 126370
+- Total Bad Authors: 4010
+- Total Neutral Authors: 22467
+- Total Authors in Goodreads Dataset: 206360
+
+Match Results:
+- Matched Good Authors: 33673 (26.65% of good authors)
+- Matched Bad Authors: 707 (17.63% of bad authors)
+- Matched Neutral Authors: 2763 (12.30% of neutral authors)
+
+Summary:
+- Total Matched Authors: 37143
+- Match Rate: 24.30% of all classified authors
+- Execution Time: 4.03 seconds
+
+####
+par
+Input Statistics:
+- Total Good Authors: 126367
+- Total Bad Authors: 4010
+- Total Neutral Authors: 22467
+- Total Authors in Goodreads Dataset: 206360
+
+Match Results:
+- Matched Good Authors: 33673 (26.65% of good authors)
+- Matched Bad Authors: 707 (17.63% of bad authors)
+- Matched Neutral Authors: 2763 (12.30% of neutral authors)
+
+Summary:
+- Total Matched Authors: 37143
+- Match Rate: 24.30% of all classified authors
+- Execution Time: 2.39 seconds
+
+###
+
+Read 153495 authors from books_data_authors_list.txt
+Read 206625 authors from authors_list_sorted.txt
+
+Found 37326 matching author names in both files.
+

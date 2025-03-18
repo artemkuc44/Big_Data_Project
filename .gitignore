@@ -1,0 +1,18 @@
+# Spark/Scala build directories
+**/target/
+**/.bsp/
+**/.idea/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+
+# Other common files to ignore
+.DS_Store
+*.swp
+*~
